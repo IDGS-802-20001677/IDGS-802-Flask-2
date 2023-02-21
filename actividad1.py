@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def iniciar():
     numero = 0
-    num_form = forms.NumberForm(request.form)
+    num_form = forms.Numero(request.form)
     if request.method == 'POST':
         numero =  int(request.form.get("numero"))
     return render_template("Actividad1.html", num = numero, form = num_form)
