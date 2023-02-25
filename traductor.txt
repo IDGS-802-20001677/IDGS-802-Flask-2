@@ -10,3 +10,4 @@ perro,dog
 gato,cat
 arena,sand
 techo,roof
+amarillo,yellow
