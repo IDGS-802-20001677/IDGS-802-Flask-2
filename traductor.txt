@@ -1,0 +1,12 @@
+azul,blue
+rojo,red
+verde,green
+rosa,pink
+oso,bear
+vaca,cow
+puerta,door
+cartera,wallet
+perro,dog
+gato,cat
+arena,sand
+techo,roof

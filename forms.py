@@ -2,7 +2,7 @@ from wtforms import Form
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FieldList, FormField, SelectField, EmailField
 from wtforms.fields import TextAreaField
-from wtforms import validators
+from wtforms import validators, RadioField
 
 
 class UserForm(Form):
@@ -21,3 +21,20 @@ class Palabras(Form):
     palabraIngles=StringField("palabraIngles",[validators.DataRequired(message='La palabra en inglés es requerida')])
     palabraEspaniol=StringField("palabraEspaniol",[validators.DataRequired(message='La palabra en español es requerida')])
     
+class TraductorForm(Form):
+    espanol = StringField('Palabra en español:',
+    [
+        validators.DataRequired(message="El campo es requerido"),
+    ])
+    ingles = StringField('Palabra en inglés:',
+    [
+        validators.DataRequired(message="El campo es requerido"),
+    ])
+
+class BuscarForm(Form):
+    palabra = StringField('Traducción al idioma seleccionado:',
+    [
+        validators.DataRequired(message="El campo es requerido"),
+    ])
+    idioma =  RadioField('Selecciona el idioma:',
+                         choices=[(1,'Inglés'),(0,'Español')])
