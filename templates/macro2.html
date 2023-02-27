@@ -16,3 +16,22 @@
   </ul>
   {% endif %}
 {% endmacro %}
+
+{% macro render_table(form) %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Banda 1</th>
+        <th>Banda 2</th>
+        <th>Multiplicador</th>
+        <th>Tolerancia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <td>{{form.b1.data}}</td>
+      <td>{{form.b2.data}}</td>
+      <td>{{form.b3.data}}</td>
+      <td>{{form.tolerancia.data}}</td>
+    </tbody>
+  </table>
+{% endmacro %}
