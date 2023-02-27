@@ -1,5 +1,5 @@
 from flask import Flask, render_template, flash
-from flask import request
+from flask import request, make_response
 from flask_wtf.csrf import CSRFProtect
 
 import forms
@@ -109,11 +109,13 @@ def iniciar():
             print(resultadoFMax)
             cbt='#A0A0A0'        
         flash(succes_message)
-    return render_template("actividad3.html", form = form,
+    response = make_response(render_template("actividad3.html", form = form,
                                b1=b1, b2=b2, b3=b3, tolerancia=tolerancia,
                                resultadoFMin=resultadoFMin, resultadox=resultadox,
                                resultadoFMax=resultadoFMax, cb1=cb1, cb2=cb2, cb3=cb3,
-                               cbt=cbt)
+                               cbt=cbt))
+    response.set_cookie('valor', str(resultadox))
+    return response
     
 
 
