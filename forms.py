@@ -59,7 +59,7 @@ class BuscarForm(Form):
         validators.DataRequired(message="El campo es requerido"),
     ])
     idioma =  RadioField('Selecciona el idioma:',
-                         choices=[(1,'Inglés'),(0,'Español')])
+                         choices=[(0,'Inglés'),(1,'Español')])
     
 class LoginForm(Form):
     username = StringField('usuario',[

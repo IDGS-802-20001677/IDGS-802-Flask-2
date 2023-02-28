@@ -17,14 +17,18 @@ def traductor():
         return redirect(url_for('traductor'))
     elif request.method == 'POST' and form1.validate():
         idioma = int(form1.idioma.data)
+        index=0 if idioma==1 else 1
         palabra = form1.palabra.data.lower()
         f = open("traductor.txt", "r")
         palabras = f.readlines()
         f.close()
         palabra_traducida = "La palabra no está registrada"
         for p in palabras:
-            if palabra in p:
-                palabra_traducida = p.split(',')[idioma]
+            words=p.split(',')
+            word=words[idioma].strip()
+            print(word)
+            if palabra == word:
+                palabra_traducida = p.split(',')[index]
                 break
         return render_template("actividad2.html", form=form, form1 = form1, traduccion = palabra_traducida)
     return render_template("actividad2.html", form=form, form1 = form1)
