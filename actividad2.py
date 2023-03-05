@@ -46,7 +46,7 @@ def Diccionario():
     "puerta":"door",
     }
     mat=diccionario.palabraIngles.data
-    
+    Xrevisado
     
     while request.method=='POST' and diccionario.validate():
         print (diccionario.palabraIngles.data)
